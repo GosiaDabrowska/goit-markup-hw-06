@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GoIT HW5 Gosia Dąbrowska</title>
+    <title>GoIT HW6 Gosia Dąbrowska</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
@@ -491,7 +491,7 @@
         <!--początek div newsletter-->
         <div>
           <p class="join-us">ZAPISZ SIĘ DO NEWSLETTERA</p>
-          <form class="flex-form">
+          <form>
             <div class="newsletter-form">
               <label for="user-email"></label>
               <input
@@ -501,14 +501,14 @@
                 id="user-email"
                 placeholder="E-mail"
               />
-              <button type="submit" class="button-newsletter">
-                Zapisz się
+              <button type="submit" class="button-submit">
+                <span>Zapisz się</span>
                 <svg width="24px" height="24px">
                   <use href="./images/icons.svg#icon-icon-send"></use>
                 </svg>
               </button>
             </div>
-            >
+          
           </form>
         </div>
       </div>
@@ -520,6 +520,41 @@
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button type="button" class="close-btn" data-modal-close>&times;</button>
+        <p>Zostaw swoje dane w formularzy poniżej</p>
+        <form class="modal-form">
+          <div class="div-form">
+            <label>
+              Imie
+              <svg width="24px" height="24px">
+                <use href="./images/icons.svg#icon-name"></use>
+              </svg>
+              <input type="text" name="name"
+              /></label>
+          </div>
+
+          <div class="div-form">
+            <label>Telefon</label>
+            <input type="tel" name="phone-number"/>
+          </div>
+
+          <div class="div-form">
+            <label>Email
+              <input type="email" name="email"/>
+            </label>
+                      </div>
+
+          <div class="div-form">
+            <label>Komentarz<textarea name="comment" placeholder="Wprowadź tekst"></textarea></label>
+              </div>
+
+          <div class="div-form">
+            <label> <input type="checkbox" name="regulamin-acceptation"/></label>
+                       <span>Oświadczam, iż akceptuję <a>Regulamin</a> i <a>Politykę prywatności.</a></span>
+          </div>
+
+            <button type="submit" class="button-submit">Wyślij</button>
+          </div>
+        </form>
       </div>
     </div>
 
