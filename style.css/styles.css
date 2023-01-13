@@ -303,7 +303,6 @@ a {
 }
 
 .modal-form {
-  /*client-form*/
   display: flex;
   flex-direction: column;
   margin: 12px 40px 12px 40px;
@@ -323,6 +322,10 @@ a {
   padding-left: 40px;
   border: 1px solid var(--modal-border);
   border-radius: 4px;
+
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-element textarea {
@@ -332,6 +335,10 @@ a {
   border-radius: 4px;
   resize: none;
   padding: 12px 16px;
+
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-element textarea::placeholder {
@@ -342,9 +349,7 @@ a {
   color: var(--modal-placeholder);
 }
 
-.form-element input:hover,
 .form-element input:focus,
-.form-element textarea:hover,
 .form-element textarea:focus {
   border-color: var(--action-color);
   outline: none;
@@ -355,12 +360,15 @@ a {
   pointer-events: none;
   color: var(--modal-icon);
   left: 12px;
-  top: 28px;
+  top: 35px;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-element svg:hover,
-.form-element svg:focus {
+.form-element input:focus + svg {
   color: rgba(33, 150, 243, 0.9);
   outline: none;
 }
@@ -420,6 +428,10 @@ a {
   align-items: center;
   justify-content: center;
   margin: 0px 164px 40px 164px;
+}
+
+.button-submit:focus {
+  outline: none;
 }
 
 /* ======= sekcja: nasze atuty ====== */
@@ -696,10 +708,6 @@ svg {
 .newsletter-form input:hover {
   border-color: var(--action-color);
   color: var(--brand-white);
-  outline: none;
-}
-
-.button-submit:focus {
   outline: none;
 }
 
