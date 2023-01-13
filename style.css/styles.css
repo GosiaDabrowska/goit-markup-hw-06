@@ -14,7 +14,7 @@ body {
   --accent-color: #2f303a;
   --action-color: #2196f3;
   --borders-color: #eeeeee;
-  --logo-and-shadows-color: #000000;
+  --brand-black: #000000;
   --main-text-color: #212121;
   --description-text-color: #757575;
   --border-bottom-header: #ececec;
@@ -25,6 +25,10 @@ body {
   --work-photos: rgba(47, 48, 58, 0.8);
   --backdrop-color: rgba(0, 0, 0, 0.2);
   --close-button-border: rgba(0, 0, 0, 0.1);
+  --modal-form-label: rgba(117, 117, 117, 1);
+  --modal-icon: rgba(33, 33, 33, 1);
+  --modal-border: rgba(33, 33, 33, 0.2);
+  --modal-placeholder: rgba(117, 117, 117, 0.5);
 }
 
 *,
@@ -101,7 +105,7 @@ nav {
 }
 
 .logo-studio-header {
-  color: var(--logo-and-shadows-color);
+  color: var(--brand-black);
 }
 
 .logo-studio-footer {
@@ -284,6 +288,138 @@ a {
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.1);
   transition-property: transform;
+}
+
+/* ====== Formularz (modal) ======*/
+
+.form-top-text {
+  font-weight: 700px;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  margin: 40px 40px 0px 40px;
+  padding-bottom: 12px;
+  color: var(--main-text-color);
+}
+
+.modal-form {
+  /*client-form*/
+  display: flex;
+  flex-direction: column;
+  margin: 12px 40px 12px 40px;
+}
+
+.form-element {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 4px;
+  padding-bottom: 10px;
+}
+
+.form-element input {
+  width: 448px;
+  height: 40px;
+  padding-left: 40px;
+  border: 1px solid var(--modal-border);
+  border-radius: 4px;
+}
+
+.form-element textarea {
+  width: 448px;
+  height: 120px;
+  border: 1px solid var(--modal-border);
+  border-radius: 4px;
+  resize: none;
+  padding: 12px 16px;
+}
+
+.form-element textarea::placeholder {
+  padding: 0px;
+  font-size: 12px;
+  line-height: 1.166;
+  letter-spacing: 0.01em;
+  color: var(--modal-placeholder);
+}
+
+.form-element input:hover,
+.form-element input:focus,
+.form-element textarea:hover,
+.form-element textarea:focus {
+  border-color: var(--action-color);
+  outline: none;
+}
+
+.form-element svg {
+  position: absolute;
+  pointer-events: none;
+  color: var(--modal-icon);
+  left: 12px;
+  top: 28px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-element svg:hover,
+.form-element svg:focus {
+  color: rgba(33, 150, 243, 0.9);
+  outline: none;
+}
+
+.form-element label,
+.checkbox label {
+  font-size: 12px;
+  line-height: 1.67;
+  letter-spacing: 0.01em;
+  color: var(--modal-form-label);
+}
+
+.checkbox {
+  width: 420px;
+  height: 24px;
+  line-height: 1.71;
+  color: var(--description-text-color);
+  margin: 0px 50px 30px 50px;
+  text-align: center;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox svg {
+  position: absolute;
+  margin-right: 8px;
+  opacity: 0;
+}
+
+.checkbox input:checked {
+  color: var(--action-color);
+}
+
+.checkbox a {
+  color: var(--action-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.button-submit {
+  background-color: var(--action-color);
+  color: var(--brand-white);
+  min-width: 200px;
+  height: 50px;
+  border-style: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 164px 40px 164px;
 }
 
 /* ======= sekcja: nasze atuty ====== */
@@ -536,14 +672,13 @@ footer {
   font-size: 16px;
 }
 
-.button-submit {
+.button-newsletter {
   background-color: var(--action-color);
   color: var(--brand-white);
   min-width: 200px;
   height: 50px;
   margin-left: 12px;
   border-style: none;
-  margin-left: 12px;
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   font-weight: 700;
@@ -555,10 +690,6 @@ footer {
 
 svg {
   vertical-align: middle;
-}
-
-.button-submit span {
-  padding: 10px 24px 10px 0px;
 }
 
 .newsletter-form input:focus,
