@@ -391,17 +391,21 @@ a {
   gap: 8px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  position: relative;
+
+  appearance: none;
 }
 
 .checkbox svg {
   position: absolute;
-  margin-right: 8px;
   opacity: 0;
 }
 
-.checkbox input:checked {
+.checkbox input:checked + svg {
+  opacity: 1;
   color: var(--action-color);
+  border-radius: 2px;
+  background-color: #2196f3;
 }
 
 .checkbox a {
@@ -703,7 +707,7 @@ svg {
   vertical-align: middle;
 }
 
-.newsletter-button span {
+.button-newsletter span {
   padding: 10px 24px 10px 0px;
 }
 
