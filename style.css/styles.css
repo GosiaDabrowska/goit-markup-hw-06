@@ -659,8 +659,6 @@ footer {
 
 .newsletter-form {
   display: flex;
-  align-items: center;
-  justify-content: center;
   margin-top: 20px;
 }
 
@@ -693,15 +691,20 @@ footer {
   border-style: none;
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
-  cursor: pointer;
 }
 
 svg {
   vertical-align: middle;
+}
+
+.newsletter-button span {
+  padding: 10px 24px 10px 0px;
 }
 
 .newsletter-form input:focus,
